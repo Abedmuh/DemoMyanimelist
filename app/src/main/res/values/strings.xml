@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Demo Myanimelist</string>
+    <string name="movie_tabs">Movie</string>
+    <string name="tvShow_tabs">Tv Show</string>
+</resources>
