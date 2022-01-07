@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.demomyanimelist.databinding.MovieFragmentBinding
+import com.example.demomyanimelist.databinding.TvShowFragmentBinding
 
 class TvShowFragment : Fragment() {
 
@@ -14,18 +17,41 @@ class TvShowFragment : Fragment() {
     }
 
     private lateinit var viewModel: TvShowViewModel
+    private var tvShowbinding : TvShowFragmentBinding? = null
+    private val binding get() = tvShowbinding!!
+    private val list = ArrayList<Animation>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.tv_show_fragment, container, false)
+    ): View {
+        tvShowbinding = TvShowFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TvShowViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        tvShowbinding?.rvTvshow?.layoutManager = LinearLayoutManager (
+            context, LinearLayoutManager.VERTICAL,false
+        )
+        viewModel = ViewModelProvider(this)[TvShowViewModel::class.java]
+        list.addAll(DataAnimation.listOfTvShow(this))
+        showRecyclerList()
+
+    }
+
+    private fun showRecyclerList() {
+        tvShowbinding?.apply {
+            rvTvshow.adapter = AdapterList(list)
+            rvTvshow.layoutManager = LinearLayoutManager(context)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        tvShowbinding = null
     }
 
 }

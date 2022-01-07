@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.demomyanimelist.databinding.MovieFragmentBinding
 
 class MovieFragment : Fragment() {
 
@@ -14,18 +16,41 @@ class MovieFragment : Fragment() {
     }
 
     private lateinit var viewModel: MovieViewModel
+    private var movieBinding : MovieFragmentBinding? = null
+    private val binding get() = movieBinding!!
+    private val list = ArrayList<Animation>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.movie_fragment, container, false)
+    ): View {
+        movieBinding = MovieFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        movieBinding?.rvMovie?.layoutManager = LinearLayoutManager (
+            context, LinearLayoutManager.VERTICAL,false
+        )
         viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
-        // TODO: Use the ViewModel
+        list.addAll(DataAnimation.listOfMovie(this))
+        showRecyclerList()
+
+    }
+
+    private fun showRecyclerList() {
+        movieBinding?.apply {
+            rvMovie.adapter = AdapterList(list)
+            rvMovie.layoutManager = LinearLayoutManager(context)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        movieBinding = null
     }
 
 }
