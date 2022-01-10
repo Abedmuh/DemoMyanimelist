@@ -105,29 +105,29 @@
     </string-array>
 
     <integer-array name="movie_poster">
-        <item>@drawable/fate2</item>
+        <item>@drawable/fate</item>
         <item>@drawable/gintama2</item>
-        <item>@drawable/kimetsu_no_yaiba_movie2</item>
-        <item>@drawable/kimi_no_nawa2</item>
-        <item>@drawable/koe_no_katachi2</item>
-        <item>@drawable/mahou_shoujo2</item>
-        <item>@drawable/no_game_no_life_zero_0</item>
-        <item>@drawable/sen_to_chihiro_no_kamikakushi2</item>
-        <item>@drawable/violet_evergarden_movie_2</item>
+        <item>@drawable/kimetsu_no_yaiba_movie</item>
+        <item>@drawable/kimi_no_nawa</item>
+        <item>@drawable/koe_no_katachi</item>
+        <item>@drawable/mahou_shoujo</item>
+        <item>@drawable/no_game_no_life_zero</item>
+        <item>@drawable/sen_to_chihiro_no_kamikakushi</item>
+        <item>@drawable/violet_evergarden_movie</item>
         <item>@drawable/yoru_wa_mijikashi2</item>
     </integer-array>
 
     <integer-array name="tvshow_poster">
-        <item>@drawable/gangsta2</item>
-        <item>@drawable/kimetsu_no_yaiba2</item>
-        <item>@drawable/made2</item>
-        <item>@drawable/mahouka2</item>
-        <item>@drawable/no_game2</item>
-        <item>@drawable/one2</item>
-        <item>@drawable/platinum_end2</item>
-        <item>@drawable/princess2</item>
-        <item>@drawable/shadow_house2</item>
-        <item>@drawable/violet2</item>
+        <item>@drawable/gangsta</item>
+        <item>@drawable/kimetsu_no_yaiba</item>
+        <item>@drawable/made</item>
+        <item>@drawable/mahouka</item>
+        <item>@drawable/no_game</item>
+        <item>@drawable/one</item>
+        <item>@drawable/platinum_end</item>
+        <item>@drawable/princess</item>
+        <item>@drawable/shadow_house</item>
+        <item>@drawable/violet</item>
     </integer-array>
 
     <string-array name="movie_aired">

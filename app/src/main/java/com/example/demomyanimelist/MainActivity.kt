@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.StringRes
 import com.example.demomyanimelist.databinding.ActivityMainBinding
+import com.example.demomyanimelist.adapter.AdapterFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {

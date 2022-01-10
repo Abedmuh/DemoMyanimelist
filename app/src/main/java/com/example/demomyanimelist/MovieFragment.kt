@@ -8,17 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demomyanimelist.databinding.MovieFragmentBinding
+import com.example.demomyanimelist.adapter.AdapterList
 
 class MovieFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MovieFragment()
-    }
 
     private lateinit var viewModel: MovieViewModel
     private var movieBinding : MovieFragmentBinding? = null
     private val binding get() = movieBinding!!
-    private val list = ArrayList<Animation>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,14 +32,15 @@ class MovieFragment : Fragment() {
             context, LinearLayoutManager.VERTICAL,false
         )
         viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
-        list.addAll(DataAnimation.listOfMovie(this))
+//        list.addAll(DataAnimation.listOfMovie(this))
+        viewModel.setListData(DataAnimation.listOfMovie(this))
         showRecyclerList()
 
     }
 
     private fun showRecyclerList() {
         movieBinding?.apply {
-            rvMovie.adapter = AdapterList(list)
+            rvMovie.adapter = AdapterList(viewModel.list)
             rvMovie.layoutManager = LinearLayoutManager(context)
         }
     }

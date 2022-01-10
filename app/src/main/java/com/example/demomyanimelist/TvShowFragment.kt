@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.demomyanimelist.databinding.MovieFragmentBinding
 import com.example.demomyanimelist.databinding.TvShowFragmentBinding
+import com.example.demomyanimelist.adapter.AdapterList
+import com.example.demomyanimelist.adapter.Animation
 
 class TvShowFragment : Fragment() {
 
@@ -37,14 +38,15 @@ class TvShowFragment : Fragment() {
             context, LinearLayoutManager.VERTICAL,false
         )
         viewModel = ViewModelProvider(this)[TvShowViewModel::class.java]
-        list.addAll(DataAnimation.listOfTvShow(this))
+//        list.addAll(DataAnimation.listOfTvShow(this))
+        viewModel.setListData(DataAnimation.listOfTvShow(this))
         showRecyclerList()
 
     }
 
     private fun showRecyclerList() {
         tvShowbinding?.apply {
-            rvTvshow.adapter = AdapterList(list)
+            rvTvshow.adapter = AdapterList(viewModel.list)
             rvTvshow.layoutManager = LinearLayoutManager(context)
         }
     }

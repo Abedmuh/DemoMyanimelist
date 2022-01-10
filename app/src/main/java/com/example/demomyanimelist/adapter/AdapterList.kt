@@ -1,4 +1,4 @@
-package com.example.demomyanimelist
+package com.example.demomyanimelist.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.demomyanimelist.DetailActivity
+import com.example.demomyanimelist.DetailActivity.Companion.EXTRA_ANIMATION
 import com.example.demomyanimelist.databinding.ItemListBinding
 
 class AdapterList (private val listAnime: ArrayList<Animation>): RecyclerView.Adapter<AdapterList.ListHolder>() {
@@ -20,7 +22,7 @@ class AdapterList (private val listAnime: ArrayList<Animation>): RecyclerView.Ad
             }
             itemView.setOnClickListener{
                 val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_ANIMATION, anime)
+                intent.putExtra(EXTRA_ANIMATION, anime)
                 itemView.context.startActivity(intent)
             }
         }

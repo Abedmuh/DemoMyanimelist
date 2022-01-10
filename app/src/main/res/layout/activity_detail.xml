@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="112dp"
+        android:layout_height="164dp"
+        android:layout_margin="30dp"
+        android:contentDescription="@string/tvShow_tabs"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/gangsta" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/poster"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/aired"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="@+id/poster"
+        tools:text="rating" />
+
+    <TextView
+        android:id="@+id/aired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/studio"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="@+id/rating"
+        tools:text="aired" />
+
+    <TextView
+        android:id="@+id/studio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/poster"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="@+id/aired"
+        tools:text="studio" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/poster"
+        app:layout_constraintTop_toBottomOf="@+id/poster"
+        tools:text="description" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

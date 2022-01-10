@@ -1,4 +1,4 @@
-package com.example.demomyanimelist
+package com.example.demomyanimelist.adapter
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

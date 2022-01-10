@@ -1,6 +1,7 @@
 package com.example.demomyanimelist
 
 import android.content.res.TypedArray
+import com.example.demomyanimelist.adapter.Animation
 
 object DataAnimation {
 

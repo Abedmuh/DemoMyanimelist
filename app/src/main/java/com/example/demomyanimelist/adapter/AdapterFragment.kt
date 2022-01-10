@@ -1,8 +1,10 @@
-package com.example.demomyanimelist
+package com.example.demomyanimelist.adapter
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.demomyanimelist.MovieFragment
+import com.example.demomyanimelist.TvShowFragment
 
 class AdapterFragment(activity: AppCompatActivity) : FragmentStateAdapter(activity)  {
     override fun getItemCount(): Int {
