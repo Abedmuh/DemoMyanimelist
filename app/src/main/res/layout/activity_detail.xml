@@ -17,44 +17,71 @@
         tools:srcCompat="@drawable/gangsta" />
 
     <TextView
-        android:id="@+id/rating"
+        android:id="@+id/rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/poster"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/aired"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/air"
         app:layout_constraintStart_toEndOf="@+id/poster"
         app:layout_constraintTop_toTopOf="@+id/poster"
-        tools:text="rating" />
+        android:text="@string/rank" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="rank"
+        app:layout_constraintBottom_toBottomOf="@+id/rate"
+        app:layout_constraintStart_toEndOf="@+id/rate" />
+
+
+    <TextView
+        android:id="@+id/air"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stud"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="@+id/rate"
+        android:text="@string/aired" />
 
     <TextView
         android:id="@+id/aired"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        tools:text="aired"
+        app:layout_constraintBottom_toBottomOf="@+id/air"
+        app:layout_constraintStart_toEndOf="@+id/air" />
+
+    <TextView
+        android:id="@+id/stud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/studio"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/poster"
         app:layout_constraintStart_toEndOf="@+id/poster"
-        app:layout_constraintTop_toTopOf="@+id/rating"
-        tools:text="aired" />
+        app:layout_constraintTop_toTopOf="@+id/air"
+        android:text="@string/studio" />
 
     <TextView
         android:id="@+id/studio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/poster"
-        app:layout_constraintStart_toEndOf="@+id/poster"
-        app:layout_constraintTop_toTopOf="@+id/aired"
-        tools:text="studio" />
+        tools:text="studio"
+        app:layout_constraintBottom_toBottomOf="@+id/stud"
+        app:layout_constraintStart_toEndOf="@+id/stud" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/poster"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/poster"
         tools:text="description" />
 

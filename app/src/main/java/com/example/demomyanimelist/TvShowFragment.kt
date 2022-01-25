@@ -9,18 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demomyanimelist.databinding.TvShowFragmentBinding
 import com.example.demomyanimelist.adapter.AdapterList
-import com.example.demomyanimelist.adapter.Animation
 
 class TvShowFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = TvShowFragment()
-    }
 
     private lateinit var viewModel: TvShowViewModel
     private var tvShowbinding : TvShowFragmentBinding? = null
     private val binding get() = tvShowbinding!!
-    private val list = ArrayList<Animation>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,10 +32,8 @@ class TvShowFragment : Fragment() {
             context, LinearLayoutManager.VERTICAL,false
         )
         viewModel = ViewModelProvider(this)[TvShowViewModel::class.java]
-//        list.addAll(DataAnimation.listOfTvShow(this))
-        viewModel.setListData(DataAnimation.listOfTvShow(this))
+        viewModel.setListData(DataAnimatio.listTvShow)
         showRecyclerList()
-
     }
 
     private fun showRecyclerList() {

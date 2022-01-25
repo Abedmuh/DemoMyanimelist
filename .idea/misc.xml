@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/activity_detail.xml" value="0.67" />
+        <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/activity_detail.xml" value="0.75" />
         <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/item_list.xml" value="0.2776978417266187" />
         <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/movie_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/DemoMyanimelist/app/src/main/res/layout/tv_show_fragment.xml" value="0.20416666666666666" />

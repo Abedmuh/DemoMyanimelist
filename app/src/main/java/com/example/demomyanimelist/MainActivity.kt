@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         val fragmentAdapter = AdapterFragment(this)
+        setTested(fragmentAdapter)
+
+    }
+
+    fun setTested(fragmentAdapter: AdapterFragment) {
         binding?.apply {
             viewPager.adapter = fragmentAdapter
             TabLayoutMediator(tabs, viewPager) { tabs, position ->

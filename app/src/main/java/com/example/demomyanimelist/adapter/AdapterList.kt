@@ -16,7 +16,6 @@ class AdapterList (private val listAnime: ArrayList<Animation>): RecyclerView.Ad
             with(binding){
                 Glide.with(itemView.context)
                     .load(anime?.poster)
-                    .apply(RequestOptions().override(55, 55))
                     .into(poster)
                 tvItemAnimation.text = anime?.Name
             }

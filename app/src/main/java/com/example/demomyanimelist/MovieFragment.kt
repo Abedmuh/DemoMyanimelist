@@ -32,16 +32,24 @@ class MovieFragment : Fragment() {
             context, LinearLayoutManager.VERTICAL,false
         )
         viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
-//        list.addAll(DataAnimation.listOfMovie(this))
-        viewModel.setListData(DataAnimation.listOfMovie(this))
-        showRecyclerList()
+        viewModel.setListData(DataAnimatio.listMovie)
+        showRecyclerList(viewModel.isNull)
 
     }
 
-    private fun showRecyclerList() {
-        movieBinding?.apply {
-            rvMovie.adapter = AdapterList(viewModel.list)
-            rvMovie.layoutManager = LinearLayoutManager(context)
+    private fun showRecyclerList(isNull: Boolean) {
+        if (!isNull) {
+            movieBinding?.apply {
+                rvMovie.adapter = AdapterList(viewModel.list)
+                rvMovie.layoutManager = LinearLayoutManager(context)
+                rvMovie.visibility = View.VISIBLE
+                msgMovie.visibility = View.INVISIBLE
+            }
+        } else {
+            movieBinding?.apply {
+                rvMovie.visibility = View.INVISIBLE
+                msgMovie.visibility = View.VISIBLE
+            }
         }
     }
 
